@@ -36,9 +36,10 @@ def parseSleepCicleString( sleepCicleString ):
 
 
 def createSleepList( data ):
+    headersNames = ['L', 'D', 'A']
     SleepList = list()
     for index, row in data.iterrows():
-       SleepCicleStringDataFrame = pd.DataFrame.from_records(createSleepCicleStringList(parseSleepCicleString(row['SleepCicleString'])))
+       SleepCicleStringDataFrame = pd.DataFrame.from_records(createSleepCicleStringList(parseSleepCicleString(row['SleepCicleString'])), columns = headersNames)
        SleepList.append(Sleep(SleepCicleStringDataFrame, convertTimeStamptoMinutes(row['StartTime']), convertTimeStamptoMinutes(row['EndTime'])))
     return SleepList
 
