@@ -57,16 +57,16 @@ def createSleepCicleStringList( listSleepCicles ):
 
 def deepnessToString( deepness ):
     if deepness == 'L':
-        return "11,0,0\n"
+        return [11,0,0]
     if deepness == 'D':
-        return "0,11,0\n"
+        return [0,11,0]
     if deepness == 'A':
-        return "0,0,11\n"
-
+        return [0,0,11]
 
 
 data = initializePandasWithCSV()
 sleepList = createSleepList(data)
-
+print(sleepList)
+x = 1
 
 
